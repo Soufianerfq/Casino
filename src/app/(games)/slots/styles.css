@@ -31,10 +31,25 @@
 
 #boxr3 div {
     animation: scroll 2s 2s forwards;
-
 }
 
-
+::-webkit-scrollbar {
+    background-color: transparent
+}
+::-webkit-scrollbar-corner{
+    display: none;
+}
+::-webkit-scrollbar-thumb{
+    background-color: #6600ff;
+    width: 1px;
+    border-radius: 8px;
+}
+::-webkit-scrollbar:vertical{
+    width: 6px;
+}
+::-webkit-scrollbar:horizontal{
+    display: none;
+}
 
 @keyframes scroll {
 

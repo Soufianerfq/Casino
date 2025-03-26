@@ -33,7 +33,7 @@ export default function Slots() {
     return (
         // Game animation and display section
         <div id="gameContainer" className="flex flex-col lg:flex-row lg:w-[1500px] lg:mt-[50px] mx-auto p-3 gap-3">
-            <div id="theGame" className="  rounded-lg flex-1 max-md:w-[100%] bg-cover border-[1px] border-gray-700 w-full">
+            <div id="theGame" className="rounded-lg flex-1 max-md:w-[100%] bg-cover border-[1px] border-gray-700 w-full ">
                 <div id="slots" className=" flex items-start justify-center sm:w-[400px] sm:h-[400px] md:w-[500px] md:h-[500px] w-[300px] h-[300px] mx-auto">
                     <div className=" relative">
                         <div id="slots" className="absolute top-[38%] left-[12%] md:h-[140px] md:w-[380px] bg-transparent grid grid-cols-3 divide-x-0">
@@ -160,15 +160,51 @@ export default function Slots() {
                     <input className="w-full accent-[#6600ff]" type="range" id="volume" name="volume" defaultValue='1' min="1" max="100" onChange={(e) => setBetNumber(Number(e.target.value))}
                     />
                 </div>
-                <div className="bg-[#1f1a24] p-2 rounded-lg" >
-                    <h3 className="w-full text-center text-white font-bold ">pick a side</h3>
 
-                    <div className="flex justify-around mt-4">
-                        <div className="max-[650px]:w-[30%]"></div>
-                    </div>
+                <div id="flip" className="mb-5">
+                    <button className="block rounded-lg p-4 text-white font-bold bg-[#6600ff] w-[100%] mt-5" onClick={() => SlotSpin(slots1.current, slots2.current, slots3.current, announcement.current)} >Spin Your Money Goodbye</button>
                 </div>
-                <div id="flip">
-                    <button className="block rounded-lg p-4 text-white font-bold bg-[#6600ff] w-[100%] mt-5" onClick={() => SlotSpin(slots1.current, slots2.current, slots3.current, announcement.current)} >Flip Your Money Goodbye</button>
+                <div id="keyway" className="bg-[#1f1a24] p-2 rounded-lg h-[130px] overflow-scroll" >
+                    <div className="flex justify-between">
+                        <div className="flex">
+                            <Image className="w-[60px] h-[60px]" alt="slot9" src={slot9}/>
+                            <Image className="w-[60px] h-[60px]" alt="slot9" src={slot9}/>
+                            <Image className="w-[60px] h-[60px]" alt="slot9" src={slot9}/>
+                        </div>
+                        <h2 className="text-[#B9FF69] font-semibold  content-center mr-2">100x</h2>
+                    </div>
+                    <div className="flex justify-between">
+                        <div className="flex">
+                            <Image className="w-[60px] h-[60px]" alt="slot1" src={slot1}/>
+                            <Image className="w-[60px] h-[60px]" alt="slot1" src={slot1}/>
+                            <Image className="w-[60px] h-[60px]" alt="slot6" src={slot6}/>
+                        </div>
+                        <h2 className="text-[#B9FF69] font-semibold  content-center mr-2">45x</h2>
+                    </div>
+                    <div className="flex justify-between">
+                        <div className="flex">
+                            <Image className="w-[60px] h-[60px]" alt="slot3" src={slot3}/>
+                            <Image className="w-[60px] h-[60px]" alt="slot3" src={slot3}/>
+                            <Image className="w-[60px] h-[60px]" alt="slot7" src={slot7}/>
+                        </div>
+                        <h2 className="text-[#B9FF69] font-semibold  content-center mr-2">20x</h2>
+                    </div>
+                    <div className="flex justify-between">
+                        <div className="flex">
+                            <Image className="w-[60px] h-[60px]" alt="slot4" src={slot4}/>
+                            <Image className="w-[60px] h-[60px]" alt="slot3" src={slot3}/>
+                            <Image className="w-[60px] h-[60px]" alt="slot8" src={slot8}/>
+                        </div>
+                        <h2 className="text-[#B9FF69] font-semibold  content-center mr-2">10x</h2>
+                    </div>
+                    <div className="flex justify-between">
+                        <div className="flex">
+                            <Image className="w-[60px] h-[60px]" alt="slot5" src={slot5}/>
+                            <Image className="w-[60px] h-[60px]" alt="slot6" src={slot6}/>
+                            <Image className="w-[60px] h-[60px]" alt="slot4" src={slot4}/>
+                        </div>
+                        <h2 className="text-[#B9FF69] font-semibold  content-center mr-2">2x</h2>
+                    </div>
                 </div>
             </div>
         </div>
