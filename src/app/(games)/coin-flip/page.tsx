@@ -1,8 +1,7 @@
 "use client";
 import "./styles.css";
 import Image from "next/image";
-import Link from "next/link";
-import { useEffect, useRef } from "react";
+import {useRef } from "react";
 import pic1 from "/src/images/coinFlip/tails.png";
 import pic2 from "/src/images/coinFlip/heads.png";
 import pic3 from "/src/images/coinFlip/coinflip.png";
@@ -15,7 +14,6 @@ export default function CoinFlip() {
   const setWager = useIOStore((state) => state.setWager);
   const setSide = useIOStore((state) => state.setSide);
   const setFace = useIOStore((state) => state.setFace);
-  const gameOutput = useIOStore((state) => state.gameOutput);
 
   const { FlipCoin } = useCoinFlip();
 

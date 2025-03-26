@@ -5,10 +5,8 @@ type Div = HTMLDivElement | null;
 export const useCoinFlip = () => {
   const setSide = useIOStore((state) => state.setSide);
   const userInput = useIOStore((state) => state.userInput);
-  const gameOutput = useIOStore((state) => state.gameOutput);
   const setWins = useIOStore((state) => state.setWins);
   let wins = 0;
-  let multiplier = [];
 
   const FlipCoin = async function (cardComponent: Div, announcement: Div) {
     if (!cardComponent) return;
@@ -45,6 +43,7 @@ export const useCoinFlip = () => {
       await sleep(50);
     }
     setWins(wins);
+    if (!announcement) return
     if (wins != 0) {
       console.log(`congrats, you won ${wins}`);
       announcement.innerHTML = `congrats, you won $${wins}`;
@@ -59,7 +58,7 @@ export const useCoinFlip = () => {
 };
 
 const sleep = function (time: number) {
-  return new Promise((resolve, reject) => {
+  return new Promise((resolve) => {
     setTimeout(resolve, time);
   });
 };

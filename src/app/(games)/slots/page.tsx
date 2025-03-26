@@ -19,10 +19,10 @@ import { useIOStore } from "@/app/store/store";
 import { useRef } from "react"
 
 export default function Slots() {
-    const slots1 = useRef(null)
-    const slots2 = useRef(null)
-    const slots3 = useRef(null)
-    const announcement = useRef(null)
+    const slots1 = useRef<HTMLDivElement | null>(null);
+    const slots2 = useRef<HTMLDivElement | null>(null);
+    const slots3 = useRef<HTMLDivElement | null>(null);
+    const announcement = useRef<HTMLDivElement | null>(null);
 
 
     const { SlotSpin } = useSlots()
